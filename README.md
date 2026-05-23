@@ -1,9 +1,8 @@
 # Cradle
 
-A framework for raising a *newborn' dynamic neural net — a perception model that starts
-from random weights, learns from natural-language teaching paired with a live
+A framework for raising a dynamic neural net from 'newborn' status to an arbitrary evolutional stage — a perception model that starts from random weights, learns from natural-language teaching paired with a live
 video stream, and is designed from day one for **on-device continual learning**
-on an embedded GPU (NVIDIA Jetson Orin).
+on an embedded GPU (NVIDIA Jetson Orin).  As the network learns and becomes more sophisticated, it can add more layers and nodes within layers.  With the forward pass SPELA training algorithm, training can occur out of phase of inference, and be conducted continuously.
 
 Cradle is built on [SPELA](https://github.com/.../spela-training) — a single-
 forward-pass training algorithm (no global backprop) where every layer has its
