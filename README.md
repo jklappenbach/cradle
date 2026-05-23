@@ -1,6 +1,6 @@
 # Cradle
 
-A framework for raising a *newborn intellect* — a perception model that starts
+A framework for raising a *newborn' dynamic neural net — a perception model that starts
 from random weights, learns from natural-language teaching paired with a live
 video stream, and is designed from day one for **on-device continual learning**
 on an embedded GPU (NVIDIA Jetson Orin).
