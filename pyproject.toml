@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cradle"
+version = "0.1.0"
+description = "A framework for raising a newborn intellect — LLM-taught, continually-learning robotic perception."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Julian Klappenbach", email = "jklappenbach@gmail.com"}]
+dependencies = [
+    "torch>=2.1",
+    "numpy>=1.24",
+    "opencv-python>=4.8",
+    # spela-training is installed separately as an editable sibling project;
+    # see README quickstart. Listing it here would force pip to resolve it
+    # from PyPI (where it does not live).
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+cradle = "cradle.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
